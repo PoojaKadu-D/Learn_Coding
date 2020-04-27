@@ -1,0 +1,148 @@
+@charset "ISO-8859-1";
+* {margin: 0 ; padding: 0 ; box-sizing: border-box ; 
+font-family: 'Montserrat', sans-serif;}
+
+
+.site-header{
+	width: 100%;
+	
+	/* background: linear-gradient(57deg , #00c6a7 , #1e4d92);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 74%, 0% 100%); */
+}
+
+nav{
+	width:100%;
+	height: 130px;
+	background:linear-gradient( 57deg , #00c6a7 , #1e4d92); 
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	color: white;
+	
+}
+
+.logo{ width: 13%; height: 100px; }
+
+.logo h1{
+	line-height: 100px; padding-left: 50px;
+}
+.img{
+	width: 35%;
+	height: 100px;
+    line-height: 140px;
+	padding-top: 10px;
+	padding-left: 5px;
+	 
+}
+
+.menu{width: 50%; height:100px;
+color:white;
+}
+
+.menu ul{
+	width: 100%; height: 100px; 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.menu ul li{
+	list-style: none;
+	font-size: 26px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white; 
+}
+.menu a{
+    color:white;
+    font-weight: bold;
+}
+.menu a:hover{
+    background-color: papayawhip;
+}
+.container{
+	width: 100%; 
+	display: flex;
+	flex-direction: row;
+	font-weight:bold;
+	
+	font-size:20px;
+	justify-content: space-around;
+	 
+	/*justify-content: space-around; */
+}
+.section{
+    background:linear-gradient( 57deg ,rgb(240, 240, 236), rgb(6, 230, 218)); 
+	
+}
+.name{
+	font-weight:bold;
+	font-size:20px;
+	padding-left: 80px;
+
+}
+
+h2{
+	padding:90px;
+	font-weight:bold;
+	padding-bottom: 60px;
+	padding-top: 60px;
+	padding-left: 80px
+
+	
+}
+
+.checkBox1{
+	font-weight:bold;
+	font-size:20px;
+	padding-left: 80px;
+	
+}
+ 
+
+.button1 button{
+	font-weight:bold;
+	padding:17px 40px; 
+	font-size:17px;
+	color:white;
+	text-transform: uppercase;
+	background: linear-gradient(57deg , #00c6a7 , #1e4d92);
+	border-radius: 6px;
+	
+	
+}
+.button1{
+	padding-top:50px;
+	padding-left:80px; 
+	padding-bottom: 20px;
+}
+   
+.footer{
+	width:100%;
+	height:100px;
+	font-weight:bold;
+	font-size:20px;
+	color:white;
+	padding-top:30px;
+	padding-left :30px;
+	background: linear-gradient(57deg , #00c6a7 , #1e4d92);
+	
+}
+.button1 button:hover{
+    background: linear-gradient(57deg , #1e4d92, #00c6a7 );   
+} 
+input[type=text], select {
+	width: 95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 17px;
+  }
+  input[type=chekbox], select{
+
+  }

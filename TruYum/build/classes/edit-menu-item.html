@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Window</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat" >
+<script src="validation.js"></script>
+</head>
+<body>
+
+	<header class="site-header">
+		<nav>
+			<div class="logo">
+				<h1>truYum</h1>
+
+			</div>
+
+			<div class="img">
+				<img src="logo.png" width="70" height="70">
+			</div>
+
+			<div class="menu">
+				<ul>
+					<li><a href="menu-item-list-admin.html">Menu</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<section class="section">
+			<h2>Edit Menu Item</h2>
+			
+			<form name="editForm" action="item-list-admin.html" onsubmit="return validateFormData();">
+			
+				<div class="name">
+					<label for="title">Name</label><br><input type="text" name="title" id="name1"  >
+					<!-- maxlength=65 pattern="[a-zA-Z ]+" -->
+
+				</div><br><br>
+				<div class="container">
+					<div class="">
+						<label for="price">Price(Rs.)</label> <br><br>
+							<input type="text" name="price" >
+					</div>
+
+					<div class="">
+						<label for="inStock">Active</label><br><br>
+							  <input type="radio" name="inStock" value="Yes"><label for="inStock">Yes</label>&nbsp;&nbsp;&nbsp;
+							  <input type="radio" name="inStock" value="No"><label for="inStock">No</label>
+					</div>
+
+					<div class="">
+						<label for="dateOfLaunch">Date of Launch</label><br> <br>
+						<input type="text" name="dateOfLaunch" placeholder="Example: 2020-05-25" >
+					</div>
+
+
+
+					<div class="">
+						<label for="category">Category</label><br> <br>
+                        <select id="category" >
+							<option value="">Select</option>
+							<option value="Starters">Starters</option>
+							<option value="Dessert">Dessert</option>
+							<option value="Drinks">Drinks</option>
+						</select>
+					</div>
+				</div><br><br>
+				<div class="checkBox1">
+					<input type="checkbox" name="freeDelivery"> <label
+						for="freeDelivery">Free Delivery</label>
+
+
+				</div>
+				<div class="button1">
+					<Button type="submit" name="submit">Save</Button>
+                </div>
+            </form>
+        </section>
+        
+	
+				
+          
+
+ <!-- onclick="validation.js" -->
+		
+</header>
+	<footer class="footer">
+		<h3>Copyright &copy; 2020</h3>
+	</footer>
+</body>
+</html>
