@@ -15,7 +15,7 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/hp/Downloads/projectOne-master/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/hp/Downloads/projectOne-master/WebContent/WEB-INF/lib/mysql-connector-java-8.0.19.jar"/>
+	<classpathentry kind="lib" path="D:/Advance JAVA/software/JSTL/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Advance JAVA/software/mysql-connector-java-8.0.19/mysql-connector-java-8.0.19.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
