@@ -94,6 +94,7 @@ public class BookServlet extends HttpServlet {
 	private void editbookdetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
+		System.out.println(id);
 		Book book = bookDao.getBookById(id);
 		request.setAttribute("book", book);
 		RequestDispatcher rd = request.getRequestDispatcher("/BookForm.jsp");
@@ -105,7 +106,8 @@ public class BookServlet extends HttpServlet {
 		
 		Book book = new Book();
 		System.out.println("error");
-		book.setId(Integer.parseInt(request.getParameter("id")));
+		int id = Integer.parseInt(request.getParameter("id"));
+		book.setId(id);
 		book.setTitle(request.getParameter("title"));
 		book.setAuthor(request.getParameter("author"));
 		book.setPrice(Float.parseFloat(request.getParameter("price")));

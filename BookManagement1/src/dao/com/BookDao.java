@@ -148,11 +148,12 @@ public class BookDao {
 		ResultSet result = prmt.executeQuery();
 		while(result.next()) {
 			book = new Book();
+			int id1 = result.getInt("book_id");
 			String title = result.getString("title");
 			String author = result.getString("author");
 			float price =  result.getFloat("price");
 			
-			book = new Book(title, author, price);
+			book = new Book(id1, title, author, price);
 		}
 	
 			}catch (SQLException e) {
