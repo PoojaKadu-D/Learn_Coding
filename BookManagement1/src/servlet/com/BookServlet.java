@@ -92,7 +92,7 @@ public class BookServlet extends HttpServlet {
 	//method to edit book details
 	private void editbookdetails(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int id = Integer.getInteger(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));
 		Book book = bookDao.getBookById(id);
 		request.setAttribute("book", book);
 		RequestDispatcher rd = request.getRequestDispatcher("/BookForm.jsp");
@@ -102,7 +102,7 @@ public class BookServlet extends HttpServlet {
 	//handle update book
 	private void udateBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		int id = Integer.getInteger(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
 		float price = Float.parseFloat(request.getParameter("price"));
@@ -114,7 +114,7 @@ public class BookServlet extends HttpServlet {
 	//delete book after selecting id
 	private void deleteBookById(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		int id = Integer.getInteger(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));
 		bookDao.deleteBookById(id);
 		response.sendRedirect("list");
 		

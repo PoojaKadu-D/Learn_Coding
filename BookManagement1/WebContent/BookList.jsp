@@ -33,7 +33,7 @@
 			<td><c:out value="${book.title}"/></td>
 			<td><c:out value="${book.author}"/></td>
 			<td><c:out value="${book.price}"/></td>
-			<td><a href="edit?id=<c:out value="${book.id}"/>">Edit</a>  :  <a href="delete?id=<c:out value="${book.id}"/>">Delete</a></td>
+			<td><a href="edit?id=${book.id}">Edit</a>  :  <a href="delete?id=${book.id}">Delete</a></td>
 			</tr>
 			</c:forEach>
 		</table>

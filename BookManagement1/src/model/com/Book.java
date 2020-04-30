@@ -2,7 +2,7 @@ package model.com;
 
 public class Book {
 
-	protected int id;
+	protected Integer id;
 	protected String title;
 	protected String author;
 	protected Float price;
@@ -12,7 +12,7 @@ public class Book {
 		
 	}
 	
-	public Book(int id, String title, String author, Float price) {
+	public Book(Integer id, String title, String author, Float price) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -27,10 +27,10 @@ public class Book {
 		this.price = price;
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getTitle() {
