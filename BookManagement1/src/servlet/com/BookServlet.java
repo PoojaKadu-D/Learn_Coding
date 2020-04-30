@@ -84,8 +84,9 @@ public class BookServlet extends HttpServlet {
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
 		float price = Float.parseFloat(request.getParameter("price"));
-		
-		bookDao.addbook(new Book(title , author , price));
+		 
+		Book book =new Book(title , author , price);
+		bookDao.addbook(book);
 		response.sendRedirect("list");
 	}
 	
@@ -102,12 +103,14 @@ public class BookServlet extends HttpServlet {
 	//handle update book
 	private void udateBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		int id = Integer.parseInt(request.getParameter("id"));
-		String title = request.getParameter("title");
-		String author = request.getParameter("author");
-		float price = Float.parseFloat(request.getParameter("price"));
+		Book book = new Book();
+		System.out.println("error");
+		book.setId(Integer.parseInt(request.getParameter("id")));
+		book.setTitle(request.getParameter("title"));
+		book.setAuthor(request.getParameter("author"));
+		book.setPrice(Float.parseFloat(request.getParameter("price")));
 		
-		bookDao.updatebookById(new Book(id, title, author, price));
+		bookDao.updatebookById(book);
 		response.sendRedirect("list");
 	}
 	

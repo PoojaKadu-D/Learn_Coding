@@ -30,9 +30,7 @@
 			<c:if test="${empty book}"> Add New Book</c:if>
 			</h2>
 		</caption>
-		<c:if test="${not empty book}">
-			<input type="hidden" name="id" value="${book.id}">
-		</c:if>
+	
 		<tr>
 			<th>Title:</th>
 			<td>
@@ -51,7 +49,9 @@
                     <input type="text" name="price" size="5" value="${book.price}" >
                 </td>
             </tr>
-            
+            <c:if test="${not empty book}">
+				<input type="hidden" name="id" value="${book.id}">
+			</c:if>
             <tr>
                 <td colspan="2" align="center">
                     <input type="submit" value="Save" >

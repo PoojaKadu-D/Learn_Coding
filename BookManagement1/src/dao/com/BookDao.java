@@ -55,15 +55,15 @@ public class BookDao {
 				String query = "insert into book(title, author, price) values(?,?,?)";
 				PreparedStatement prmt = connection.prepareStatement(query);
 					
-				prmt.setString(2, book.getTitle());
-				prmt.setString(3, book.getAuthor());
-				prmt.setFloat(4, book.getPrice());
+				prmt.setString(1, book.getTitle());
+				prmt.setString(2, book.getAuthor());
+				prmt.setFloat(3, book.getPrice());
 				int execute = prmt.executeUpdate();
 				if(execute >0){
 					return "Data inserted Successfully!";
 				}
 			}catch(SQLException e) {
-				System.out.println("Error");
+				e.printStackTrace();
 				
 			}
 			finally {
@@ -79,17 +79,17 @@ public class BookDao {
 		}
 	public boolean updatebookById(Book book) {
 		
-		Book book1 = new Book();
+		//Book book1 = new Book();
 		Connection conn = jdbcutils.getConnection();
 		
 		try {
-			String update ="Update book set  title=?, author=?, price=? where book_id=?";
+			String update ="Update book set title=?, author=?, price=? where book_id=?";
 			PreparedStatement prmt = conn.prepareStatement(update);
 			
-			prmt.setString(1, book1.getTitle());
-			prmt.setString(2, book1.getAuthor());
-			prmt.setFloat(3, book1.getPrice());
-			prmt.setInt(4, book1.getId());
+			prmt.setString(1, book.getTitle());
+			prmt.setString(2, book.getAuthor());
+			prmt.setFloat(3, book.getPrice());
+			prmt.setInt(4, book.getId());
 			
 			int executeUpdate = prmt.executeUpdate();
 			if(executeUpdate>0) {
