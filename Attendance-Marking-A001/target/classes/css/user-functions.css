@@ -1,0 +1,84 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.centerdiv {
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff; 
+	border-radius: 30px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+	text-align: center;
+	border: 1px solid #e6e6e6;
+	
+	/* opacity: 0.6; background: #fafafa;
+ */
+}
+
+
+
+.icon {
+	position: absolute;
+	left: calc(50% - 50px);
+	transition: 0.2s;
+	border-radius: 50%;
+	top: 10%;
+	border: 6px solid #fff;
+	justify-content: center;
+	align-items: center;
+	width: 110px;
+	height: 110px;
+	background: #ff8080;
+}
+
+.icon a {
+	display: inline;
+}
+
+.icon i {
+	color: #fff;
+	font-size: 70px;
+}
+
+.centerdiv:hover .icon {
+	background: #fff;
+	border: 2px solid #ff8080;
+}
+
+.centerdiv:hover .icon i {
+	color: #ff8080;
+}
+
+.centerdiv:hover .icon a {
+	color: #ff8080;
+}
+
+.title {
+	margin-top:130px;
+	font-weight: 700;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.span-message{
+	text-align: left;
+	padding-top:20px;
+	padding-left: 10px;
+	font-size: 10px!important;
+	color: #fff;
+	font-style: italic;
+	
+}
+.span-message h3{
+ 	font-size: 20px;
+  	color: black;
+  	text-align: left;
+  	font-family: monospace;
+ }

@@ -1,0 +1,124 @@
+@charset "ISO-8859-1";
+* {margin: 0 ; padding: 0 ; box-sizing: border-box ; 
+}
+.bigimg{
+	height:200vh;
+	width:100%;
+	background-image: linear-gradient(57deg ,#00c6a7, #1e4d92)
+}
+.bigimga{
+	height:200vh;
+	width:100%;
+	background-image: linear-gradient(57deg ,#00c6a7, #1e4d92)
+}
+#ulogin{
+	width: 110px;
+	height: 110px;
+	border-radius: 50%;
+	position: relative;
+	top:-60px;
+	left:calc((750px - 130px) / 2);
+	
+}
+#ulogint{
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	position: relative;
+	top:-60px;
+	left:calc((750px - 110px) / 2);
+	
+}
+#ulogints{
+	width: 750px;
+	height: 90px;
+	border-radius: 10px;
+	position: relative;
+	top:-60px;
+	/* left:calc((750px - 110px) / 2); */
+	
+}
+.nav-bar li a{
+	color: #fff;
+}
+/* FOR TRAINER */
+.centerdiva{
+	width: 750px;
+	height: 740px;
+	position: absolute;
+	top:95%;
+	left: 50%;
+	 
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border-radius: 10px;
+	
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12),0 1px 4px rgba(0 ,0 ,0 ,0.24);
+	 /* opacity: 0.6; 
+ */}
+ /* FOR SESSION */
+.centerdiv{
+	width: 750px;
+	height: 720px;
+	position: absolute;
+	top:95%;
+	left: 50%;
+	 
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border-radius: 10px;
+	
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12),0 1px 4px rgba(0 ,0 ,0 ,0.24);
+	 /* opacity: 0.6; 
+ */}
+ .centerdivs{
+	width: 750px;
+	height: 450px;
+	position: absolute;
+	top:70%;
+	left: 50%;
+	 
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border-radius: 10px;
+	
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12),0 1px 4px rgba(0 ,0 ,0 ,0.24);
+	 /* opacity: 0.6; 
+ */}
+ .side-label{
+	display: flex;
+	width: calc(100% - 20px)!important;
+}
+.form-group{
+	margin-left: 20px;
+	width: calc(100% - 40px)!important;
+	font-size: 15px!important;
+}
+#register-btn{
+	padding-left: 320px;
+	padding-right: 325px;
+	font-size: 20px;
+	border-radius:20px; 
+	
+}
+.radiobutton{
+	display: flex!important;
+}
+.gender-two{
+	margin-left: 20px;
+	margin-right: 20px
+}
+.span-message{
+	text-align: left;
+	padding-top:20px;
+	padding-left: 10px;
+	font-size: 10px!important;
+	color: #fff;
+	
+}
+.span-message h3{
+ 	font-size: 20px;
+  	color: #fff;
+  	text-align: left;
+  	font-family: monospace;
+ }

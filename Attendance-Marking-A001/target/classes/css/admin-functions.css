@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.span-message{
+	text-align: left;
+	padding-top:20px;
+	padding-left: 10px;
+	font-size: 10px!important;
+	color: #fff;
+	
+}
+.span-message h3{
+ 	font-size: 20px;
+  	color: #fff;
+  	text-align: left;
+  	font-family: monospace;
+ }
+ 
+ .container a{
+ color:#fff;
+ }
+ table{
+ color:#fff;
+ }
