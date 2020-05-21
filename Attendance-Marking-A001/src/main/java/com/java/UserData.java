@@ -7,10 +7,18 @@ public class UserData {
 	String userLastName;
 	String userEmailId;
 	String userPassword;
+	int userAge;
+	String userGender;
+	Long userContactNumber;
 	
 	
 	public UserData() {
 		super();
+	}
+
+	public UserData(int user_id) {
+		super();
+		this.user_id = user_id;
 	}
 
 	public UserData(String firstName, String lastName, String emailId, String password) {
@@ -53,5 +61,30 @@ public class UserData {
 	public void setPassword(String password) {
 		this.userPassword = password;
 	}
+
+	public int getUserAge() {
+		return userAge;
+	}
+
+	public void setUserAge(int userAge) {
+		this.userAge = userAge;
+	}
+
+	public String getUserGender() {
+		return userGender;
+	}
+
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
+	}
+
+	public Long getUserContactNumber() {
+		return userContactNumber;
+	}
+
+	public void setUserContactNumber(Long userContactNumber) {
+		this.userContactNumber = userContactNumber;
+	}
+
 	
 }

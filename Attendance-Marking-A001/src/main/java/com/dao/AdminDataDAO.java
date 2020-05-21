@@ -8,7 +8,7 @@ import com.servlet.*;
 
 public interface AdminDataDAO {
 	
-	public AdminData addUserDeatails(AdminData admindata);
+	public AdminData addAdminDeatails(AdminData admindata);
 	
 	//Super User Function- Fetch all pending Admin Requests
 	public ArrayList<AdminData> getAllAdmin();

@@ -5,9 +5,11 @@ public class AdminData {
 	int admin_Id;
 	String adminFirstName;
 	String adminLastName;
+	//String admin_dob;
 	int adminAge;
 	String adminGender;
 	Long adminContactNumber;
+	String adminEmailId;
 	String adminPassword;
 	String status;
 	
@@ -30,7 +32,7 @@ public class AdminData {
 	}
 	
 	public AdminData(int admin_Id, String adminFirstName, String adminLastName, int adminAge, String adminGender,
-			Long adminContactNumber, String adminPassword, String status) {
+			Long adminContactNumber, String adminEmailId, String adminPassword, String status) {
 		super();
 		this.admin_Id = admin_Id;
 		this.adminFirstName = adminFirstName;
@@ -39,21 +41,23 @@ public class AdminData {
 		this.adminGender = adminGender;
 		this.adminContactNumber = adminContactNumber;
 		this.adminPassword = adminPassword;
+		this.adminEmailId = adminEmailId;
 		this.status = status;
 	}
 
 	public AdminData(String adminFirstName, String adminLastName, int adminAge, String adminGender,
-			Long adminContactNumber, String adminPassword) {
+			Long adminContactNumber, String adminEmailId, String adminPassword) {
 		super();
 		this.adminFirstName = adminFirstName;
 		this.adminLastName = adminLastName;
 		this.adminAge = adminAge;
 		this.adminGender = adminGender;
 		this.adminContactNumber = adminContactNumber;
+		this.adminEmailId = adminEmailId;
 		this.adminPassword = adminPassword;
 	}
 
-	public AdminData(int admin_Id, String adminFirstName, String adminLastName, int adminAge, String adminGender, Long adminContactNumber, String adminPassword) {
+	public AdminData(int admin_Id, String adminFirstName, String adminLastName, int adminAge, String adminGender, Long adminContactNumber, String adminPassword ,String adminEmailId) {
 		super();
 		this.admin_Id = admin_Id ;
 		this.adminFirstName = adminFirstName;
@@ -62,9 +66,12 @@ public class AdminData {
 		this.adminGender = adminGender;
 		this.adminContactNumber = adminContactNumber;
 		this.adminPassword = adminPassword;
+		this.adminEmailId = adminEmailId;
 		
 	}
 	
+	
+
 	public int getAdmin_Id() {
 		return admin_Id;
 	}
@@ -110,6 +117,13 @@ public class AdminData {
 	}
 	public void setAdminContactNumber(Long adminContactNumber) {
 		this.adminContactNumber = adminContactNumber;
+	}
+	public String getadminEmailId() {
+		return adminEmailId;
+	}
+
+	public void setadminEmailId(String adminEmailId) {
+		this.adminEmailId = adminEmailId;
 	}
 	public String getAdminPassword() {
 		return adminPassword;

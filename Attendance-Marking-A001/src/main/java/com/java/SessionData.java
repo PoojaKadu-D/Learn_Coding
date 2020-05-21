@@ -13,6 +13,12 @@ public class SessionData {
 		super();
 	}
 
+	public SessionData(int session_Id, String session_Description) {
+		super();
+		this.session_Id = session_Id;
+		this.session_Description = session_Description;
+	}
+
 	public SessionData(int session_Id, String session_Description, String session_SkillSet, String session_Date,
 			int session_time, int available_Slot) {
 		super();

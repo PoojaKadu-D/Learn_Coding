@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dao.*;
 import com.java.*;
@@ -22,9 +23,10 @@ public class UserLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UserLogin() {
-		super();
-		// TODO Auto-generated constructor stub
+	UserdataDAO userdao;
+
+	public void init() {
+		userdao = new UserDataImplementation();
 	}
 
 	/**
@@ -45,13 +47,21 @@ public class UserLogin extends HttpServlet {
 		System.out.println("sasa" + id);
 
 		if (user != null && id != 0 && id == 1) {
-			request.setAttribute("user", user);
-			request.setAttribute("name", name);
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			session.setAttribute("name", name);
+		//	request.setAttribute("Welcome", "Welcome user...");
+			session.setAttribute("id", id);
 			RequestDispatcher rd = request.getRequestDispatcher("/SuperUser-functions.jsp");
 			rd.forward(request, response);
 		} else if (user != null && id != 0) {
-			request.setAttribute("user", user);
-			request.setAttribute("name", name);
+			HttpSession sessions = request.getSession();
+			sessions.setAttribute("user", user);
+			sessions.setAttribute("Welcome", "Welcome ");
+			sessions.setAttribute("name", name);
+			sessions.setAttribute("u_id", id);
+		//	request.setAttribute("user", user);
+			//request.setAttribute("name", name);
 			RequestDispatcher rd = request.getRequestDispatcher("/User-Home.jsp");
 			rd.forward(request, response);
 		} else {

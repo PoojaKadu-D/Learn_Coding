@@ -13,23 +13,40 @@ import com.controller.JDBC_GetConnection;
 public class UserDataImplementation implements UserdataDAO {
 
 	@Override
-	public String addUserDeatails(UserData udata) {
+	public UserData addUserDeatails(UserData udata) {
 		Connection conn = JDBC_GetConnection.getConnection();
 		if(conn !=null) {
 			
 		try {
-			String query = "insert into Users(First_name , Last_name, Email, Password) values(?,?,?,?)";
+			String query = "insert into Users(First_name , Last_name, Email, Password, Age, Gender, ContactNumber) values(?,?,?,?,?,?,?)";
 			PreparedStatement prmt = conn.prepareStatement(query);
 			prmt.setString(1, udata.getFirstName());
 			prmt.setString(2, udata.getLastName());
 			prmt.setString(3, udata.getEmailId());
 			prmt.setString(4, udata.getPassword());
+			prmt.setInt(5, udata.getUserAge());
+			prmt.setString(6, udata.getUserGender());
+			prmt.setLong(7, udata.getUserContactNumber());
 			int execute = prmt.executeUpdate();
+			String password = udata.getPassword();
 			if(execute >0){
-				return "Data inserted Successfully!";
+				UserData usdata = new UserData();
+				
+				String query2 = "select Employee_Id from Users where Password= ?";
+				PreparedStatement prmt1 = conn.prepareStatement(query2);
+				prmt1.setString(1, password);
+				ResultSet result = prmt1.executeQuery();
+				while (result.next()) {
+					usdata.setUser_id(result.getInt("Employee_Id"));
+				}
+				if (usdata != null) {
+					return usdata;
+				}
+	
 			}
 		}catch(SQLException e) {
 			System.out.println("Error");
+
 			
 		}
 		finally {
@@ -40,6 +57,7 @@ public class UserDataImplementation implements UserdataDAO {
 			}
 		}
 		}
+		
 		
 		return null;
 	}

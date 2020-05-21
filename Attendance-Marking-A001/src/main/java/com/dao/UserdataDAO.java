@@ -4,7 +4,7 @@ import com.java.*;
 
 public interface UserdataDAO {
 
-	public String addUserDeatails(UserData fedata);
+	public UserData addUserDeatails(UserData fedata);
 
 	// User Authentication
 	public UserData checkLoginStatus(int userid, String userpassword);

@@ -22,7 +22,7 @@ public class SkillsDataImplementation implements SkillsDataDAO {
 			
 			int execute = prmt.executeUpdate();
 			if(execute >0){
-				return "Your details are submitted successfully...";
+				return "Skill details are submitted successfully...";
 			}
 		}catch(SQLException e) {
 			System.out.println("Error");

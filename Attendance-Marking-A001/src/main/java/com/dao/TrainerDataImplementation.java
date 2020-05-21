@@ -25,7 +25,7 @@ public class TrainerDataImplementation implements TrainerDataDAO {
 			
 			int execute = prmt.executeUpdate();
 			if(execute >0){
-				return "Your details are submitted successfully...";
+				return " Trainer details are submitted successfully...";
 			}
 		}catch(SQLException e) {
 			System.out.println("Error");

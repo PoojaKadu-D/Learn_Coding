@@ -12,13 +12,13 @@ import com.controller.JDBC_GetConnection;
 public class AdminDataImplementation implements AdminDataDAO {
 
 	@Override
-	public AdminData addUserDeatails(AdminData admindata) {
+	public AdminData addAdminDeatails(AdminData admindata) {
 		Connection connection = JDBC_GetConnection.getConnection();
 
 		if (connection != null) {
 
 			try {
-				String query = "insert into Admins(First_name , Last_name, Admin_age, Admin_Gender, Contact_number, Password, Status) values(?,?,?,?,?,?,?)";
+				String query = "insert into Admins(First_name , Last_name, Admin_age, Admin_Gender, Contact_number, Password, Status, Email_Id) values(?,?,?,?,?,?,?,?)";
 				PreparedStatement prmt = connection.prepareStatement(query);
 				prmt.setString(1, admindata.getAdminFirstName());
 				prmt.setString(2, admindata.getAdminLastName());
@@ -27,14 +27,15 @@ public class AdminDataImplementation implements AdminDataDAO {
 				prmt.setLong(5, admindata.getAdminContactNumber());
 				prmt.setString(6, admindata.getAdminPassword());
 				prmt.setString(7, "Pending");
+				prmt.setString(8, admindata.getadminEmailId());
 				int execute = prmt.executeUpdate();
 				if (execute > 0) {
 					AdminData adminData = new AdminData();
-					String fname = admindata.getAdminFirstName();
+					String password = admindata.getAdminPassword();
 
-					String query2 = "select Admin_Id from Admins where First_name= ?";
+					String query2 = "select Admin_Id from Admins where Password= ?";
 					PreparedStatement prmt1 = connection.prepareStatement(query2);
-					prmt1.setString(1, fname);
+					prmt1.setString(1, password);
 					ResultSet result = prmt1.executeQuery();
 					while (result.next()) {
 						adminData.setAdmin_Id(result.getInt("Admin_Id"));
@@ -68,7 +69,7 @@ public class AdminDataImplementation implements AdminDataDAO {
 			try {
 
 				String query = " select Admin_Id, First_name, Last_name, Admin_age, Admin_Gender,\r\n"
-						+ "Contact_number, Password from Admins where Status =?";
+						+ "Contact_number, Password, Email_Id from Admins where Status =?";
 				PreparedStatement prmt = connection.prepareStatement(query);
 				prmt.setString(1, "Pending");
 
@@ -83,6 +84,7 @@ public class AdminDataImplementation implements AdminDataDAO {
 					adminData.setAdminGender(result.getString("Admin_Gender"));
 					adminData.setAdminContactNumber(result.getLong("Contact_number"));
 					adminData.setAdminPassword(result.getString("Password"));
+					adminData.setadminEmailId(result.getString("Email_Id"));
 
 					addDataList.add(adminData);
 				}
@@ -124,8 +126,9 @@ public class AdminDataImplementation implements AdminDataDAO {
 					Long contacts = result.getLong("Contact_number");
 					String password = (result.getString("Password"));
 					loginStatus = result.getString("Status");
+					String email = result.getString("Email_Id");
 					System.out.println(loginStatus);
-					adminData = new AdminData(admin_id, first_Name, last_Name, age, gender, contacts, password,
+					adminData = new AdminData(admin_id, first_Name, last_Name, age, gender, contacts, email, password,
 							loginStatus);
 				}
 				if (adminData != null) {
@@ -164,7 +167,7 @@ public class AdminDataImplementation implements AdminDataDAO {
 				int executeUpdate = prmt.executeUpdate();
 				if (executeUpdate > 0) {
 					String query1 = " select Admin_Id, First_name, Last_name, Admin_age, Admin_Gender,\r\n"
-							+ "Contact_number, Password from Admins where Status =?";
+							+ "Contact_number, Password, Email_Id from Admins where Status =?";
 					PreparedStatement prmt1 = connection.prepareStatement(query1);
 					prmt1.setString(1, "Pending");
 
@@ -179,6 +182,7 @@ public class AdminDataImplementation implements AdminDataDAO {
 						adminData.setAdminGender(result.getString("Admin_Gender"));
 						adminData.setAdminContactNumber(result.getLong("Contact_number"));
 						adminData.setAdminPassword(result.getString("Password"));
+						adminData.setadminEmailId("Email_Id");
 
 						addDataList.add(adminData);
 					}
